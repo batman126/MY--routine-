@@ -12,51 +12,47 @@ body {
 }
 
 .todo-container {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 30px;
-  width: 90%;
-  max-width: 420px;
+  width: 100%;
+  max-width: 480px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #fff;
+  font-size: 28px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
 .input-section {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;
 }
 
 .input-section input {
-  flex: 1 1 200px;
   padding: 12px;
   border: none;
   border-radius: 10px;
   font-size: 16px;
-  outline: none;
   background: rgba(255, 255, 255, 0.1);
   color: white;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .input-section input::placeholder {
   color: #ccc;
 }
 
-.input-section input:focus {
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
-}
-
 .input-section button {
-  flex: 1 1 100px;
-  padding: 12px 16px;
+  padding: 12px;
   background: #00bcd4;
   color: white;
   border: none;
@@ -64,11 +60,12 @@ h1 {
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s ease;
+  width: 100%;
 }
 
 .input-section button:hover {
   background: #0097a7;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 ul {
@@ -78,7 +75,7 @@ ul {
 }
 
 li {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   padding: 12px;
   margin-bottom: 12px;
   border-radius: 10px;
@@ -86,12 +83,12 @@ li {
   justify-content: space-between;
   align-items: center;
   color: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  flex-wrap: wrap;
 }
 
 li span {
   cursor: pointer;
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 li.completed span {
@@ -102,6 +99,7 @@ li.completed span {
 .actions {
   display: flex;
   gap: 6px;
+  margin-top: 8px;
 }
 
 .actions button {
@@ -114,10 +112,6 @@ li.completed span {
   font-size: 14px;
 }
 
-.actions button:hover {
-  background: #c2185b;
-}
-
 .actions button.edit {
   background: #4caf50;
 }
@@ -126,13 +120,6 @@ li.completed span {
   background: #388e3c;
 }
 
-@media (max-width: 480px) {
-  .input-section input,
-  .input-section button {
-    flex: 1 1 100%;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
+.actions button:hover {
+  background: #c2185b;
 }
